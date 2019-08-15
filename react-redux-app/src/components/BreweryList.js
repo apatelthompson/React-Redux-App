@@ -11,11 +11,11 @@ const BreweryList = props => {
   return (
     <>
       <h1>Welcome to all the Beer you can handle!</h1>
-      <button onClick={props.getData}>
+      <button className="beer-btn" onClick={props.getData}>
         {props.isLoading ? (
           <Loader type="Circles" color="indigo" height={50} width={100} />
         ) : (
-          "Find the closest beer."
+          "Mmmm... beeeeer. Click here."
         )}
       </button>
       {props.breweries &&
@@ -23,6 +23,7 @@ const BreweryList = props => {
           <Brewery
             key={place.name}
             name={place.name}
+            city={place.city}
             type={place.brewery_type}
           />
         ))}

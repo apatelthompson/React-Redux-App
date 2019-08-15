@@ -29,7 +29,6 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-
         error: "No beer for you"
       };
     default:

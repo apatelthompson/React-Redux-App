@@ -10,7 +10,6 @@ export const getData = () => {
     axios
       .get("https://api.openbrewerydb.org/breweries")
       .then(res => {
-        // res.data.data
         console.log("then:", res);
         dispatch({ type: FETCH_BREWERY_DATA_SUCCESS, payload: res.data });
       })
