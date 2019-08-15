@@ -11,11 +11,12 @@ export const getData = () => {
       .get("https://api.openbrewerydb.org/breweries")
       .then(res => {
         // res.data.data
-        console.log(res);
+        console.log("then:", res);
         dispatch({ type: FETCH_BREWERY_DATA_SUCCESS, payload: res.data });
       })
       .catch(err => {
-        dispatch({ type: FETCH_BREWERY_DATA_FAILURE, payload: err.response });
+        console.log("catch:", err);
+        dispatch({ type: FETCH_BREWERY_DATA_FAILURE, payload: err });
       });
   };
 };
